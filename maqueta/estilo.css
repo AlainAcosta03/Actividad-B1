@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Impact;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+a{
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: orange;
+}
+
+.contenedor > * {
+    box-shadow: rgba(0,0,0,0.75) 0px 5px 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.personaje{
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    margin: 20px;
+    background-color: #80240063;
+    padding: 10px;
+}
+
+/*. corresponde a un class     # correspomde a un id*/
+
+.header{
+    grid-area: header;
+    background-color: #000000;
+    color: white;
+}
+
+#navbar{
+    grid-area: navbar;
+    background-color: #860a0a;
+    color: white;
+    text-align: justify;
+    align-items: center;
+}
+
+#main{
+    grid-area: main;
+    background-color: rgb(49, 49, 49);
+    color: white;
+}
+
+#sidebar{
+    grid-area: sidebar;
+    background-color: rgb(247, 53, 53);
+    text-align: center;
+    align-items: center;
+}
+
+#footer{
+    grid-area: footer;
+    background-color: rgb(214, 214, 214);
+}
+/*GRID TEMPLATE COLUMN*/
+.contenedor{
+    display: grid;
+    gap: 10px;
+    grid-template:
+    "header"    100px
+    "navbar"    auto
+    "main"      auto
+    "sidebar"   auto
+    "footer"    100px; 
+}
+
+
+/*@MEDIA*/
+@media (min-width:600px){
+    .contenedor{
+    grid-template:
+    "header header"    100px
+    "navbar navbar"    auto
+    "sidebar main"     auto
+    "footer footer"    100px /
+    200px auto;
+    }
+}
+
+@media (min-width:900px){
+    .contenedor{
+    grid-template:
+    "header header header"    100px
+    "navbar main sidebar"     auto
+    "footer footer footer"    100px/
+    200px   auto    200px;
+    }
+}
